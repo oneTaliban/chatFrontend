@@ -1,0 +1,41 @@
+/* src/index.css */
+@import "tailwindcss";
+
+/* *,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    scroll-behavior: smooth;
+} */
+
+@theme {
+    --color-whatsapp-green: #25d366;
+    --color-whatsapp-green-dark: #128c78;
+    --color-whatsapp-green-darker: #075e54;
+    /* --color-whatsapp-chat-bg: #e5ddd5; */
+    --color-whatsapp-message-sent: #dcf8c6;
+    --color-whatsapp-message-received: #ffffff;
+    --color-whatsapp-timestamp: #667781;
+
+    /* Hacker Theme Colors */
+    --color-matrix-green: #00ff41;
+    --color-hacker-green: #00ff00;
+    --color-hacker-blue: #0080ff;
+    --color-hacker-purple: #bf00ff;
+    --color-hacker-red: #ff003c;
+    --color-terminal-bg: #0a0a0a;
+    --color-terminal-header: #1a1a1a;
+
+
+    /* --color-hacker-green: rgba(0, 255, 0, 0.7); */
+    /* --color-hacker-red: rgba(255, 0, 0, 0.7); */
+    /* --color-hacker-blue: rgba(0, 191, 255, 0.7);         */
+    --color-hacker-dark: #0a0a0a;
+    /* --color-terminal-bg: rgba(0, 0, 0, 0.85);         */
+    --color-terminal-border: rgba(50, 50, 50, 0.8);
+
+}
+
