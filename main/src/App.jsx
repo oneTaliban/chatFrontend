@@ -125,7 +125,7 @@ function App() {
                       <Route path='/beta/special' element={<SpecialOperations></SpecialOperations>}></Route>
                       <Route path='/beta/seo' element={<SEOBooster></SEOBooster>}></Route>
                       <Route path='/beta/delivery' element={<DeliverySystem></DeliverySystem>}></Route>
-
+                      <Route path='*' element={<Home></Home>}></Route>
                     </Routes>
                   </main>
                   <Footer></Footer>
