@@ -91,6 +91,17 @@ export const paymentsApi = {
     createCheckoutSession: (checkoutData) => api.post(API_ENDPOINTS.PAYMENTS.CHECKOUT, checkoutData),
 }
 
+export const checkoutApi = {
+    createPayment: (data) => api.post('/payments/create/', data),
+    getPayment: (id) => api.get(`/payments/details/${id}`, id),
+    stripe: {
+        createIntent: (data) => api.post('/payments/stripe/create-intent/', data),
+    },
+    mpesa: {
+        initiate: (data) => api.post('/payments/mpesa/initiate/', data),
+    }
+};
+
 export const securityApi = {
     getDemos: () => api.get(API_ENDPOINTS.SECURITY.DEMOS),
     getActivites: () => api.get(API_ENDPOINTS.SECURITY.ACTIVITIES),

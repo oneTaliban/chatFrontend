@@ -45,6 +45,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import './styles/App.css';
 import Beta from './pages/Beta';
+import Payment from './components/TestComponents/Payment';
 
 
 
@@ -97,6 +98,9 @@ function App() {
                       <Route path='/ad-dashboard' element={<AdRevenueDashboard></AdRevenueDashboard>}></Route>
                       <Route path='/beta' element={<Beta></Beta>}></Route>
                       <Route path='/blog' element={<Blog></Blog>}></Route>
+
+                      {/* test payments */}
+                      {/* <Route path='/payments' element={<Payment></Payment>}></Route> */}
                       
                       <Route path='/beta/dashboard' element={
                           <AnimatePresence>
