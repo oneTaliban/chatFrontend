@@ -22,8 +22,9 @@ class WebSocketManager {
             return;
         }
         
-        try {
-            const wsUrl = `ws://localhost:8000/ws/chat/${roomId}/?token=${token}`;
+        try {       
+            // const wsUrl = `ws://localhost:8000/ws/chat/${roomId}/?token=${token}`;
+            const wsUrl = "wss://onetalibanchat.onrender.com/ws/chat/${roomId}/?token=?{token}";
             this.ws = new WebSocket(wsUrl);
 
             this.ws.onopen = () => {

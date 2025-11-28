@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { API_ENDPOINTS, STORAGE_KEYS } from './constants';
 
-const API_BASE_URL = 'http://localhost:8000/api';
+const API_BASE_URL = 'https://onetalibanchat.onrender.com/api';
 
 // create axios instance
 export const api = axios.create({
