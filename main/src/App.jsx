@@ -45,7 +45,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import './styles/App.css';
 import Beta from './pages/Beta';
-import Payment from './components/TestComponents/Payment';
+// import Payment from './components/TestComponents/Payment';
 
 
 

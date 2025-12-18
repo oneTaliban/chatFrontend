@@ -1,29 +1,10 @@
-/* src/index.css */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500;600;700&display=swap');
-@import "tailwindcss";
 
-@theme {
-    --color-whatsapp-green: #25d366;
-    --color-whatsapp-green-dark: #128c78;
-    --color-whatsapp-green-darker: #075e54;
-    /* --color-whatsapp-chat-bg: #e5ddd5; */
-    --color-whatsapp-message-sent: #dcf8c6;
-    --color-whatsapp-message-received: #ffffff;
-    --color-whatsapp-timestamp: #667781;
-
-    /* Hacker Theme Colors */
-    --color-matrix-green: #00ff41;
-    --color-hacker-green: #00ff00;
-    --color-hacker-blue: #0080ff;
-    --color-hacker-purple: #bf00ff;
-    --color-hacker-red: #ff003c;
-    --color-terminal-bg: #0a0a0a;
-    --color-terminal-header: #1a1a1a;
-}
+@import 'tailwindcss'
 
 
 /* Hacker Theme Variables */
-:root {
+/* ::root {
   --color-matrix-green: #00ff41;
   --color-hacker-green: #00ff00;
   --color-hacker-blue: #0080ff;
@@ -33,7 +14,7 @@
   --color-terminal-header: #1a1a1a;
   --color-terminal-border: rgba(50, 50, 50, 0.8);
   --color-hacker-dark: #0a0a0a;
-}
+} */
 
 /* Terminal Text Effects */
 .terminal-text {
