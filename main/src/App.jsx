@@ -45,6 +45,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import './styles/App.css';
 import Beta from './pages/Beta';
+import CyberAdManager from './components/ads/CyberAdManager';
 // import Payment from './components/TestComponents/Payment';
 
 
@@ -66,94 +67,103 @@ function App() {
   return (
     <>
 
-      <ThemeProvider>
-        <AuthProvider>
-          <WebSocketProvider>
-            <ChatProvider>
-              <Router>
-                {/* TODO visual effects */}
-                <MatrixBackground></MatrixBackground>
-                <Scanlines></Scanlines>
 
-                <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 dark:bg-gray-900 relative" >
-                  <Navbar activeTab={activeTab} setActiveTab={handleTabChange}></Navbar>
-                  <main className="container mx-auto px-4 py-8 relative z-10">
-                    <Routes>
-                      <Route path='/' element={<Home />}></Route>
-                      <Route path='/login' element={<Login />}></Route>
-                      <Route path='/register' element={<Register />}></Route>
-                      <Route path='/chat' element={
-                        <ProtectedRoute>
-                          <Chat />
-                        </ProtectedRoute>
-                      }></Route>
-                      <Route path='/profile' element={
-                        <ProtectedRoute>
-                          <Profile />
-                        </ProtectedRoute>
-                      }></Route>
-                      <Route path='/hacking' element={<EthicalHacking />}></Route>
-                      <Route path='/donations' element={<Donations />}></Route>
-                      <Route path='/subscription' element={<Subscription />}></Route>
-                      <Route path='/ad-dashboard' element={<AdRevenueDashboard></AdRevenueDashboard>}></Route>
-                      <Route path='/beta' element={<Beta></Beta>}></Route>
-                      <Route path='/blog' element={<Blog></Blog>}></Route>
+        <ThemeProvider>
+          <AuthProvider>
+            <WebSocketProvider>
+              <ChatProvider>
+                <Router>
+                  {/* TODO visual effects */}
+                  <MatrixBackground></MatrixBackground>
+                  <Scanlines></Scanlines>
 
-                      {/* test payments */}
-                      {/* <Route path='/payments' element={<Payment></Payment>}></Route> */}
-                      
-                      <Route path='/beta/dashboard' element={
-                          <AnimatePresence>
-                            <motion.div
-                            initial={{ opacity: 0, y: 20}}
-                            animate={{ opacity: 1, y: 0}}
-                            exit={{ opacity: 0, y: -20}}
-                            >
-                            <Dashboard></Dashboard>
-                            </motion.div>
-                          </AnimatePresence>
-                      }></Route>
-                      <Route path='/beta/bots' element={
-                          <AnimatePresence>
-                            <motion.div
-                            initial={{ opacity: 0, y: 20}}
-                            animate={{ opacity: 1, y: 0}}
-                            exit={{ opacity: 0, y: -20}}
-                            >
-                            <BotManager></BotManager>
-                            </motion.div>
-                          </AnimatePresence>
-                      }></Route>
-                      <Route path='/beta/commands' element={<CommandCenter></CommandCenter>}></Route>
-                      <Route path='/beta/data' element={<DataManager></DataManager>}></Route>
-                      <Route path='/beta/special' element={<SpecialOperations></SpecialOperations>}></Route>
-                      <Route path='/beta/seo' element={<SEOBooster></SEOBooster>}></Route>
-                      <Route path='/beta/delivery' element={<DeliverySystem></DeliverySystem>}></Route>
-                      <Route path='*' element={<Home></Home>}></Route>
-                    </Routes>
-                  </main>
-                  <Footer></Footer>
+                  <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 dark:bg-gray-900 relative" >
+                    <Navbar activeTab={activeTab} setActiveTab={handleTabChange}></Navbar>
 
-                  {/* Banner Ads */}
-                  {adState.shouldShowBanner && (
-                    <BannerAd
-                      position='bottom'
-                      adUnitId={AD_CONFIG.AD_UNITS.BANNER.HOME}
-                    ></BannerAd>
-                  )}
+                    <CyberAdManager
+                      enablePopunder={true}
+                      showTerminal={false}
+                      stealthMode={false}
+                    >
+                    <main className="container mx-auto px-4 py-8 relative z-10">
+                      <Routes>
+                        <Route path='/' element={<Home />}></Route>
+                        <Route path='/login' element={<Login />}></Route>
+                        <Route path='/register' element={<Register />}></Route>
+                        <Route path='/chat' element={
+                          <ProtectedRoute>
+                            <Chat />
+                          </ProtectedRoute>
+                        }></Route>
+                        <Route path='/profile' element={
+                          <ProtectedRoute>
+                            <Profile />
+                          </ProtectedRoute>
+                        }></Route>
+                        <Route path='/hacking' element={<EthicalHacking />}></Route>
+                        <Route path='/donations' element={<Donations />}></Route>
+                        <Route path='/subscription' element={<Subscription />}></Route>
+                        <Route path='/ad-dashboard' element={<AdRevenueDashboard></AdRevenueDashboard>}></Route>
+                        <Route path='/beta' element={<Beta></Beta>}></Route>
+                        <Route path='/blog' element={<Blog></Blog>}></Route>
 
-                  {/* Interstitial Ads */}
-                  <InterstitialAd
-                    isOpen={adState.shouldShowInterstial}
-                    onClose={resetInterstitial}
-                    adUnitId={AD_CONFIG.AD_UNITS.INTERSTITIAL.NAVIGATION}
-                  ></InterstitialAd>
-                </div>
-              </Router>
-            </ChatProvider>
-          </WebSocketProvider>
-        </AuthProvider>
-      </ThemeProvider>
+                        {/* test payments */}
+                        {/* <Route path='/payments' element={<Payment></Payment>}></Route> */}
+                        
+                        <Route path='/beta/dashboard' element={
+                            <AnimatePresence>
+                              <motion.div
+                              initial={{ opacity: 0, y: 20}}
+                              animate={{ opacity: 1, y: 0}}
+                              exit={{ opacity: 0, y: -20}}
+                              >
+                              <Dashboard></Dashboard>
+                              </motion.div>
+                            </AnimatePresence>
+                        }></Route>
+                        <Route path='/beta/bots' element={
+                            <AnimatePresence>
+                              <motion.div
+                              initial={{ opacity: 0, y: 20}}
+                              animate={{ opacity: 1, y: 0}}
+                              exit={{ opacity: 0, y: -20}}
+                              >
+                              <BotManager></BotManager>
+                              </motion.div>
+                            </AnimatePresence>
+                        }></Route>
+                        <Route path='/beta/commands' element={<CommandCenter></CommandCenter>}></Route>
+                        <Route path='/beta/data' element={<DataManager></DataManager>}></Route>
+                        <Route path='/beta/special' element={<SpecialOperations></SpecialOperations>}></Route>
+                        <Route path='/beta/seo' element={<SEOBooster></SEOBooster>}></Route>
+                        <Route path='/beta/delivery' element={<DeliverySystem></DeliverySystem>}></Route>
+                        <Route path='*' element={<Home></Home>}></Route>
+                      </Routes>
+                    </main>
+
+                    </CyberAdManager>
+                    <Footer></Footer>
+
+                    {/* Banner Ads */}
+                    {adState.shouldShowBanner && (
+                      <BannerAd
+                        position='bottom'
+                        adUnitId={AD_CONFIG.AD_UNITS.BANNER.HOME}
+                      ></BannerAd>
+                    )}
+
+                    {/* Interstitial Ads */}
+                    <InterstitialAd
+                      isOpen={adState.shouldShowInterstial}
+                      onClose={resetInterstitial}
+                      adUnitId={AD_CONFIG.AD_UNITS.INTERSTITIAL.NAVIGATION}
+                    ></InterstitialAd>
+                  </div>
+                </Router>
+              </ChatProvider>
+            </WebSocketProvider>
+          </AuthProvider>
+        </ThemeProvider>
 
     </>
   )
